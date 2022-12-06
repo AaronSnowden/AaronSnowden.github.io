@@ -1,13 +1,13 @@
 const init = () => {
   const config = {
-    apiKey: "AIzaSyCNYMNYUu87JP8wwV_SzBmRnjBOR_7tc6k",
-    authDomain: "shopify-98124.firebaseapp.com",
-    databaseURL: "https://shopify-98124-default-rtdb.firebaseio.com",
-    projectId: "shopify-98124",
-    storageBucket: "shopify-98124.appspot.com",
-    messagingSenderId: "435147455643",
-    appId: "1:435147455643:web:042ad622ab2ed00b3bda3e",
-    measurementId: "G-FY9B9367G9",
+    apiKey: "AIzaSyCrsjlMUF3qnaWQSgEtrB0vXncwANSOf_o",
+    authDomain: "aaron-kibuuka.firebaseapp.com",
+    databaseURL: "https://aaron-kibuuka-default-rtdb.firebaseio.com",
+    projectId: "aaron-kibuuka",
+    storageBucket: "aaron-kibuuka.appspot.com",
+    messagingSenderId: "485100229335",
+    appId: "1:485100229335:web:d905f394d2e9a268519692",
+    measurementId: "G-5P21ME51LF",
   };
 
   try {
@@ -46,7 +46,13 @@ function send_message(data) {
 
   let messages_ref = app.database().ref("messages");
 
-  messages_ref.push(data).then((d) => {
-    console.log(data, "pushed to db");
-  });
+  messages_ref
+    .push(data)
+    .then((d) => {
+      document.getElementById("submitSuccessMessage").style.display = "block";
+    })
+    .catch((error) => {
+      document.getElementById("submitErrorMessage").style.display = "block";
+      console.log(error);
+    });
 }

@@ -11421,6 +11421,10 @@ html {
   color: #6c757d;
 }
 
+#submitErrorMessage, #submitSuccessMessage{
+  display: none;
+}
+
 .masthead {
   padding-top: calc(6rem + 74px);
   padding-bottom: 6rem;
